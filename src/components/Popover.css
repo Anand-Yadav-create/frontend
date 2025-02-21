@@ -1,0 +1,44 @@
+.popover-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .popover-trigger {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .popover-content {
+    position:fixed;
+    right:5%;
+    top:80px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px;
+    text-align:center;
+  }
+
+
+  /* gridcss */
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px;
+    padding: 10px;
+    margin-left: 45px;
+  }
+  
+  .grid-item {
+    background: white;
+    /* color: white; */
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    /* border: 2px solid black; */
+  }
