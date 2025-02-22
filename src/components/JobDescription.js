@@ -52,7 +52,10 @@ const JobDescription = () => {
   const {singleCompany}=useSelector(store=>store.company);
 
   const applyJobHandler=async()=>{
-
+      if(!user){
+          toast.error("User not Authenticated");
+      }
+    else{
     try{
         const res=await axios.get(`${APPLICATION_API_END_POINT}/apply/${jobId}`,{withCredentials:true});
         
@@ -67,6 +70,7 @@ const JobDescription = () => {
         console.log(error);
         toast.error(error.response.data.message);
 
+    }
     }
 
   }
