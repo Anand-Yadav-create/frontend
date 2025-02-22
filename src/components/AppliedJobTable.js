@@ -25,12 +25,28 @@ const AppliedJobTable = () => {
             <td>{appliedjobs.createdAt.split("T")[0]}</td>
             <td>{appliedjobs.job.title}</td>
             <td>{appliedjobs.job.company.name}</td>
-            <td style={{textAlign:"center"}}><Badge badgeContent={appliedjobs.status.toUpperCase()} color={`${appliedjobs.status==="rejected"?"Secondary":appliedjobs.status==="pending"?"primary":"rgba(235, 19, 19, 0)"}`}></Badge></td>
+            <td style={{textAlign:"center"}}><span
+      style={{
+        border: "2px solid white",
+        borderRadius: "30px",
+        color: "white",
+        padding: "5px",
+        backgroundColor: appliedjobs.status === "rejected"
+          ? "red"
+          : appliedjobs.status === "pending"
+          ? "gray"
+          : "green",
+      }}
+    >
+      {appliedjobs.status.toUpperCase()}
+    </span></td>
           </tr>
         ))}
       </tbody>
     </table>
     </div>
+        
+    
   )
 }
 

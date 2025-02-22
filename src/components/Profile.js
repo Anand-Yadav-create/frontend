@@ -49,15 +49,30 @@ const Profile = () => {
         <div>
           <h4 style={{margin:"0px"}}>Skills</h4>
           {
-            <div style={{ maxWidth: "100%", display: "flex", gap: "80px", padding: "30px", alignItems:"right" }}>{
+            <div style={{ maxWidth: "100%", display: "flex",gap:"10px", padding: "30px", alignItems:"right" }}>{
               user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
                 return (
 
 
-                  <Badge key={index} badgeContent={item.replace(" ","")}
-                    color="primary">
+                
 
-                  </Badge>
+<span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+                  
+{item.replace(" ","")}
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+                  
 
                 )
               }

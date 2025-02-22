@@ -1,5 +1,5 @@
 
-import Badge from '@material-ui/core/Badge';
+
 import React from 'react'
 import Avtar from './shared/Avtar';
 import { useNavigate } from 'react-router-dom';
@@ -25,18 +25,30 @@ const LatestJobsCard = ({job}) => {
       
         <div style={{display:'flex',alignItems:"center",gap:"2px",marginTop:"4px",justifyContent:"space-between",padding:"30px"}}>
       
-      <Badge badgeContent={`${job?.position}Position`}
-      color="primary">
-      
-      </Badge>
-      <Badge badgeContent={`${job?.jobType.replace(" ","")}`} 
-      color="secondary">
-      
-      </Badge>
-      <Badge badgeContent={`${job?.salary}LPA`} 
-      color="secondary">
-      
-      </Badge>
+        <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"50px",color:"white",padding:"5px"}} >
+                  
+                  {`${job?.position}Position`}
+              </span>
+    {/* <Badge badgeContent={`${job?.jobType.replace(" ","")}`} 
+    color="secondary">
+    
+    </Badge>
+    <Badge badgeContent={`${job?.salary}LPA`} 
+    color="secondary">
+    
+    </Badge> */}
+    
+
+    <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+                
+               {`${job?.jobType.replace(" ","")}`}
+            </span>
+
+
+            <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"50px",color:"white",padding:"5px"}} >
+                
+            {`${job?.salary}LPA`} 
+            </span>
       
     </div>
         </div>

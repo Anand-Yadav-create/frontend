@@ -81,3 +81,14 @@
 
         margin-left:3px;
   }
+
+  .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red; /* Badge color */
+    color: white; /* Text color */
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 12px; /* Text size */
+  }

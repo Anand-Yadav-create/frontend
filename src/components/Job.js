@@ -1,10 +1,11 @@
 import React from 'react'
 
+import './Navbar.css'; 
 
 import { useState } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import Avtar from './shared/Avtar';
-import Badge from '@material-ui/core/Badge';
+
 import { useNavigate } from 'react-router-dom';
 
 
@@ -54,21 +55,36 @@ const Job = ({job}) => {
         <p className="text-sm text-gray-600">{job?.description}</p>
       </div>
       
-      <div style={{display:'flex',alignItems:"center",gap:"2px",marginTop:"4px",justifyContent:"space-between",padding:"30px"}}>
+      <div style={{display:'flex',alignItems:"center",gap:"2px",marginTop:"4px",justifyContent:"space-evenly",padding:"30px"}}>
       
-      <Badge badgeContent={`${job?.position}Position`}
+      {/* <Badge badgeContent=
       color="primary">
       
-      </Badge>
-      <Badge badgeContent={`${job?.jobType.replace(" ","")}`} 
+      </Badge> */}
+                    <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"50px",color:"white",padding:"5px"}} >
+                  
+                    {`${job?.position}Position`}
+                </span>
+      {/* <Badge badgeContent={`${job?.jobType.replace(" ","")}`} 
       color="secondary">
       
       </Badge>
       <Badge badgeContent={`${job?.salary}LPA`} 
       color="secondary">
       
-      </Badge>
+      </Badge> */}
       
+
+      <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+                  
+                 {`${job?.jobType.replace(" ","")}`}
+              </span>
+
+
+              <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"50px",color:"white",padding:"5px"}} >
+                  
+              {`${job?.salary}LPA`} 
+              </span>
     </div>
 
     <div>

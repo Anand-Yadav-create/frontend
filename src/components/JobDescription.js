@@ -83,16 +83,16 @@ const JobDescription = () => {
       <h4 style={{margin:"0px"}}>{singleJob?.title}</h4>
       <p style={{marginBottom:"0px",paddingBottom:"0px"}}>{singleJob?.description}</p>
        <h4 style={{margin:"10px 0"}}>Required Skills</h4>
-      <div style={{width:"50rem",display:'flex',gap:"5rem",padding:"30px"}}>
+      <div style={{width:"50rem",display:'flex',gap:"10px",padding:"30px"}}>
       
       
       {singleJob?.requirements?.map((item,index)=>(
        
-        <Badge key={index} badgeContent={item.replace(" ","")}
-        color="secondary">
         
-        </Badge>
-        
+         <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+                  
+                  {item.replace(" ","")}
+      </span>
 
       ))}
       
@@ -107,20 +107,26 @@ const JobDescription = () => {
       </Badge> */}
       </div>
 
-      <div style={{width:"10rem",display:'flex',justifyContent:"space-between",padding:"30px"}}>
+      <h4 style={{margin:"0px 0px"}}>Job details</h4>
+
+      <div style={{ margin:"0px 0px",width:"15rem",display:'flex',justifyContent:"space-between",padding:"30px"}}>
       
-      <Badge badgeContent={`${singleJob?.position}Position`}
-      color="primary">
-      
-      </Badge>
-      <Badge badgeContent={`${singleJob?.jobType.replace(" ","")}`}
-      color="secondary">
-      
-      </Badge>
-      <Badge badgeContent={`${singleJob?.salary}LPA`}
-      color="secondary">
-      
-      </Badge>
+
+      <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+      {`${singleJob?.position}Position`}
+      </span>
+
+
+      <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+                  
+      {`${singleJob?.jobType.replace(" ","")}`}
+      </span>
+
+
+      <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
+                  
+      {`${singleJob?.salary}LPA`}
+      </span>
       </div>
     </div>
 
