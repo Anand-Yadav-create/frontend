@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar';
 import Avtar from './shared/Avtar';
-import Badge from '@material-ui/core/Badge';
+
 import AppliedJobTable from './AppliedJobTable';
 import { useState } from 'react';
 import UpdateProfileDialog from './UpdateProfileDialog';
