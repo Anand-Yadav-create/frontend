@@ -35,9 +35,9 @@ const Browse = () => {
         }else{
           setFilterjobs(allJobs);
         }
-        // return ()=>{
-        //     dispatch(setSearchedQuery(""));
-        // }
+        return ()=>{
+            dispatch(setSearchedQuery(""));
+        }
 
 
     
