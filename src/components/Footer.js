@@ -8,7 +8,7 @@ const Footer = () => {
     <div>
 
 <footer style={{width:"80%",margin:"8rem auto",backgroundColor:"gray"}}>
-      <div  style={{display:"flex",justifyContent:"space-between",padding:"70px 70px"}}>
+      <div className="help"  style={{display:"flex",justifyContent:"space-between",padding:"70px 70px"}}>
        
         <div >
           <h2 style={{padding:"0px"}}>JobEngineersPro</h2>
