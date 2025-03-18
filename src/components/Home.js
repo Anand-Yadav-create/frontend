@@ -29,7 +29,8 @@ function Home() {
       <CategoryCarousel/>
       <LatestJobs/>
       <Footer/>
-    </div>
+      </div>
+    
   )
 }
 

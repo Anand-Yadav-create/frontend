@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Navbar.css';
+
 import './Popover.css';
 import LatestJobsCard from './LatestJobsCard';
 import { useSelector } from 'react-redux';
@@ -32,7 +34,7 @@ const LatestJobs = () => {
     <div>
       <h1 style={{ textAlign: "center", font: "bold", marginLeft: "45px" }}> <span style={{ color: "#0a9ecf9a" }}>Latests & Top</span>Job Openings</h1>
 
-      <div style={{ width: "80%", margin: "10px auto", marginBottom: "8rem", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "10px" }} >
+      <div className='grid-cont' style={{ width: "80%", margin: "10px auto", marginBottom: "8rem", display: "grid", gap: "10px" }} >
         {allJobs?.length > 0 ? (allJobs.slice(0, 6).map((job) => (
 
 

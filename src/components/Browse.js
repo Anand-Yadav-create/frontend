@@ -51,7 +51,7 @@ const Browse = () => {
         <div style={{margin:"0px 70px"}}>
             <h4>Search Results({filterjobs.length})</h4>
 
-            <div  style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+            <div className="grid-cont" style={{display:"grid",gap:"20px"}}>
                 {
                     filterjobs.map((item)=>{
                         return(

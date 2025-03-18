@@ -5,16 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const HeroSection =()=>{
 
-    const inputStyle = {
-        padding: "10px",
-        fontSize: "16px",
-        border: "2px solid green",
-        borderRadius: "5px",
-        width: "450px",
-        outline: "none",
-        transition: "border 0.3s ease",
-      };
-
+    
       const [query,setquery]=useState("");
 
       const dispatch=useDispatch();
@@ -37,7 +28,7 @@ const HeroSection =()=>{
             <h1 style={{text:"15px"}}>Search , Apply & <br/> Get Your<span style={{color:"#0a9ecf9a"}}>Dream Jobs</span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In quasi soluta molestiae dolore atque voluptates.</p>
 
-            <div><input type="text" style={inputStyle} placeholder='Find your dream jobs'
+            <div><input type="text" class="inputStyle" placeholder='Find your dream jobs'
             onChange={(e)=>setquery(e.target.value)}
             
             />

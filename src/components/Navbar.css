@@ -1,94 +1,174 @@
-
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:rgba(235, 19, 19, 0);
-    padding: 10px 20px;
-    /* color: black; */
-  }
-  
-  .navbar-logo a {
-    text-decoration: none;
-    /* color: white; */
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .navbar-logo a span{
-    color:red;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:rgba(235, 19, 19, 0);
+  padding: 10px 20px;
+  /* color: black; */
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  /* color: white; */
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar-logo a span{
+  color:red;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  color: #0a9ecf9a;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  /* color: white; */
+  padding-top: 13px;
+  font-size: 17px;
+  transition: color 0.3s ease;
+}
+
+.inputStyle {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid green;
+  border-radius: 5px;
+  width: 450px;
+  outline: none;
+  transition: border 0.3s ease;
+};
+
+
+
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+ @media (max-width: 900px) {
   .navbar-links {
     display: flex;
-    gap: 20px;
-    color: #0a9ecf9a;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    /* color: white; */
-    padding-top: 13px;
-    font-size: 17px;
-    transition: color 0.3s ease;
-  }
-  
- 
-  
-  .navbar-toggle {
-    display: none;
     flex-direction: column;
-    cursor: pointer;
+    /* background-color: #007bff; */
+    /* position: absolute; */
+    top: 50px;
+    right: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
   }
-  
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
+
+  .navbar-links.active {
+    display: flex;
   }
-  
-  @media (max-width: 768px) {
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      /* background-color: #007bff; */
-      position: absolute;
-      top: 50px;
-      right: 20px;
-      width: 150px;
-      text-align: center;
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+button{
+  padding: 10px 20px;
+     
+ background-color:#0a9ecf9a;
+      
+  color: white;
+      border: none;
       border-radius: 5px;
-    }
-  
-    .navbar-links.active {
-      display: flex;
-    }
-  
-    .navbar-toggle {
-      display: flex;
-    }
-  }
-  button{
-    padding: 10px 20px;
-       
-   background-color:#0a9ecf9a;
-        
-    color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+      cursor: pointer;
 
-        margin-left:3px;
-  }
+      margin-left:3px;
+}
 
-  .badge {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: red; /* Badge color */
-    color: white; /* Text color */
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 12px; /* Text size */
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red; /* Badge color */
+  color: white; /* Text color */
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px; /* Text size */
+} 
+
+.grid-cont{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+@media (max-width: 768px) {
+  /* .nav-links { */
+    /* display: flex;
+    width: 100%; */
+   
+  
+
+  /* .nav-links.active {
+    display: block; */
+  
+
+  /* .hamburger {
+    display: flex;
+  } */
+}
+ 
+
+  @media (max-width: 900px) {
+    .grid-cont {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+    }
+    .show{
+      display: none;
+    }
+
+    .inputStyle {
+      padding: 10px;
+      font-size: 12px;
+      border: 2px solid green;
+      border-radius: 5px;
+      width: auto;
+      outline: none;
+      transition: border 0.3s ease;
+    };
+    
   }
+  @media (max-width: 600px) {
+    .grid-cont {
+      grid-template-columns: repeat(1, 1fr); /* 2 columns for mobile */
+    }
+  }
+  
+
+  @media (max-width: 900px) {
+    .navbar {
+      flex-direction: column;
+    }
+    .to{
+      flex-direction: column;
+    }
+    .help{
+      flex-direction:column;
+    }
+    .dialogbhai{
+      width:auto;
+      height:auto;
+
+    }
+    .disabled{
+      display:none;
+    }
+  }
+  

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar';
 import Avtar from './shared/Avtar';
+import "./Navbar.css";
 
 import AppliedJobTable from './AppliedJobTable';
 import { useState } from 'react';
@@ -12,18 +13,43 @@ import useGetAppliedJobs from '../hooks/useGetAppliedJobs';
 let isResume=true;
 
 const Profile = () => {
+  const [go,setgo]=useState(true);
  
   useGetAppliedJobs();
   const [open,setOpen]=useState(false);
 
   const {user}=useSelector(store=>store.auth);
+
+
+  // Step 2: Function to update grid style based on window width
+  const updateGridStyle = () => {
+    if (window.innerWidth <= 500) {
+      setgo(false);
+    }  else {
+      setgo(true);
+    }
+  };
+
+  // Step 3: Set up effect to update grid style on window resize
+  useEffect(() => {
+    // Initial grid style update when the component mounts
+    updateGridStyle();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateGridStyle);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateGridStyle);
+    };
+  }, []); 
   return (
     <div>
       <Navbar />
 
       <div style={{ maxWidth: "80rem", background: "white",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.2)", margin: "5px 100px", padding: "8px" }}>
 
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex",flexWrap:"wrap" ,justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
             <Avtar />
             <div>
@@ -33,7 +59,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <button onClick={()=>setOpen(true)}>Edit</button>
+          <button className="disabled" onClick={()=>setOpen(true)}>Edit</button>
 
         </div>
 
@@ -49,7 +75,7 @@ const Profile = () => {
         <div>
           <h4 style={{margin:"0px"}}>Skills</h4>
           {
-            <div style={{ maxWidth: "100%", display: "flex",gap:"10px", padding: "30px", alignItems:"right" }}>{
+            <div style={{ maxWidth: "100%", display: "flex",flexWrap: "wrap",gap:"10px", padding: "30px", alignItems:"right" }}>{
               user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
                 return (
 
@@ -101,9 +127,10 @@ const Profile = () => {
 
       <div style={{maxWidth:"80rem",margin:"5px 95px"}}>
 
-<h4>All Applied Jobs</h4>
+<h4>All Applied Jobs</h4>{
 
-<AppliedJobTable/>
+go&&<AppliedJobTable/>
+}
 </div>
   <UpdateProfileDialog open={open} setOpen={setOpen}/>
 

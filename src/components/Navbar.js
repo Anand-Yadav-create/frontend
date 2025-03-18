@@ -56,41 +56,45 @@ const Navbar = () => {
 
      // NavBar.js
 
-    <nav className="navbar" >
-      <div className="navbar-logo" style={{padding:"20px"}}>
-        <Link to="/" style={{color:"#0a9ecf9a"}}>Engineers Job <span>Portal</span></Link>
-      </div>
-      <div className="navbar-links">
-        {
-          (user && user.role==="Recruiter")?
-          (<><Link to="/admin/companies">Companies</Link>
-        <Link to="/admin/jobs">Jobs</Link></>):(<>
-         <Link to="/">Home</Link>
-        <Link to="/jobs">Jobs</Link>
-        <Link to="/browse">Browse</Link></>)
-       
-}
-        
-      
-      {!user?(<div>
-       <Link to="/login"> <button>Login</button></Link>
-        <Link to="/signup"> <button>SignUp</button></Link>
-      </div>):
-      (<div onClick={togglePopover}>
-      <Avtar url= {user?.profile?.profilePhoto} />
-      </div>
-      )
-     
-       
-     
-      
 
-      }
-      {isPopoverOpen && <Popover content={user?.fullname}/>}
-      </div>
+     
+    <nav className="navbar" >
+    <div className="navbar-logo" style={{padding:"20px"}}>
+      <Link to="/" style={{color:"#0a9ecf9a"}}>Engineers Job <span>Portal</span></Link>
+    </div>
+    <div className="navbar-links">
+      {
+        (user && user.role==="Recruiter")?
+        (<><Link to="/admin/companies">Companies</Link>
+      <Link to="/admin/jobs">Jobs</Link></>):(<>
+       <Link to="/">Home</Link>
+      <Link to="/jobs">Jobs</Link>
+      <Link to="/browse">Browse</Link></>)
+     
+}
       
-      
-    </nav>
+    
+    {!user?(<div>
+     <Link to="/login"> <button>Login</button></Link>
+      <Link to="/signup"> <button>SignUp</button></Link>
+    </div>):
+    (<div onClick={togglePopover}>
+    <Avtar url= {user?.profile?.profilePhoto} />
+    </div>
+    )
+   
+     
+   
+    
+
+    }
+    {isPopoverOpen && <Popover content={user?.fullname}/>}
+    </div>
+    
+    
+  </nav>
+
+  
 
 
    
