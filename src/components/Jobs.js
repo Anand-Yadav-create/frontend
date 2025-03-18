@@ -57,7 +57,7 @@ const Jobs = () => {
 
               <div style={{display:"flex",gap:"5px"}}>
 
-               <div style={{width:"20%",paddingLeft:"20px"}}> <Filter/>
+               <div className="show" style={{width:"20%",paddingLeft:"20px"}}> <Filter/>
                
                </div>
         
@@ -66,7 +66,7 @@ const Jobs = () => {
                  filterjobs.length<=0?<span>Job not found</span>:(
 
                          <div className="flex-1" style={{width:"100%",height:"88vh",overflowY:"auto",padding:"20px 20px"}}>
-                           <div className="grid-cont" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px"}}>
+                           <div className="grid-cont" style={{display:"grid",gap:"10px"}}>
                             {
                               filterjobs.map((item)=>
                                  (
