@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useGetAllJobs from '../hooks/useGetAllJobs';
 import { motion } from "framer-motion";
 import { setSearchedQuery } from './redux/authSlice';
+import './Navbar.css';
 
 
 // const job=[1,4,6,7,8,9,10,11,23,4,5,7];
@@ -65,7 +66,7 @@ const Jobs = () => {
                  filterjobs.length<=0?<span>Job not found</span>:(
 
                          <div className="flex-1" style={{width:"100%",height:"88vh",overflowY:"auto",padding:"20px 20px"}}>
-                           <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px"}}>
+                           <div className="grid-cont" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px"}}>
                             {
                               filterjobs.map((item)=>
                                  (
