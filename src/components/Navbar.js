@@ -74,7 +74,7 @@ const Navbar = () => {
       
       {!user?(<div>
        <Link to="/login"> <button>Login</button></Link>
-        <Link to="/signup"> <button>SignUp</button></Link>
+        <Link to="/signup"> <button style={{marginTop:"5px"}}>SignUp</button></Link>
       </div>):
       (<div onClick={togglePopover}>
       <Avtar url= {user?.profile?.profilePhoto} />
