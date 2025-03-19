@@ -34,7 +34,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <button onClick={()=>setOpen(true)}>Edit</button>
+          <button className="show" onClick={()=>setOpen(true)}>Edit</button>
 
         </div>
 
