@@ -7,6 +7,7 @@ import axios from 'axios';
 import Spinnerbutton from '../spinner/Spinnerbutton';
 import { useSelector } from 'react-redux';
 import useGetCompanyById from '../../hooks/useGetCompanyById';
+import '../Navbar.css';
 
 
 const CompanySetup = () => {
@@ -94,7 +95,7 @@ const CompanySetup = () => {
                 </button>
                 <h3>Company Setup</h3>
             </div>
-           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"10px"}}> 
+           <div className="bhai" style={{display:"grid",gap:"10px"}}> 
 
             <div>
             <h4>Company Name</h4>
