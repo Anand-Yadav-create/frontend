@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import useGetAllCompanies from '../../hooks/useGetAllCompanies'
 import { useDispatch } from 'react-redux'
 import { setsearchCompanyByText } from '../redux/companySlice'
-
+import '../Navbar.css'
 const Companies = () => {
  
   useGetAllCompanies();
