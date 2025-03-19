@@ -31,7 +31,7 @@ const AdminJobs = () => {
 
                 <input style={{width:"20rem",height:"30px",fontSize:"20px"}} placeholder="Filter by name" onChange={(e)=>setInput(e.target.value)}/>
 
-                <button onClick={()=>navigate("/admin/jobs/create")}>New Jobs</button>
+                <button style={{marginTop:"5px"}} onClick={()=>navigate("/admin/jobs/create")}>New Jobs</button>
 
 
             </div>
