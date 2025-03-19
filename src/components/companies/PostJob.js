@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import Spinnerbutton from '../spinner/Spinnerbutton';
+import '../Navbar.css';
 
 const PostJob = () => {
 
@@ -86,7 +87,7 @@ const PostJob = () => {
 
         <form onSubmit={submitHandler}>
 
-        <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)"}}>
+        <div className="bhai" style={{display:"grid"}}>
         <div>
         <h5>Title</h5>
             <input style={{width:"20rem",height:"20px"}} type="text"
