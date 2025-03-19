@@ -7,6 +7,7 @@ import { useState } from 'react';
 import UpdateProfileDialog from './UpdateProfileDialog';
 import { useSelector } from 'react-redux';
 import useGetAppliedJobs from '../hooks/useGetAppliedJobs';
+import './Navbar.css';
 
 
 let isResume=true;
@@ -21,7 +22,7 @@ const Profile = () => {
     <div>
       <Navbar />
 
-      <div style={{ maxWidth: "80rem", background: "white",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.2)", margin: "5px 100px", padding: "8px" }}>
+      <div style={{ maxWidth: "80%", background: "white",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.2)", margin: "5px 100px", padding: "8px" }}>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
@@ -49,7 +50,7 @@ const Profile = () => {
         <div>
           <h4 style={{margin:"0px"}}>Skills</h4>
           {
-            <div style={{ maxWidth: "100%", display: "flex",gap:"10px", padding: "30px", alignItems:"right" }}>{
+            <div className="cl" style={{ maxWidth: "100%", display: "flex",gap:"10px", padding: "30px", alignItems:"right" }}>{
               user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
                 return (
 
