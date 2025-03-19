@@ -10,7 +10,7 @@ import { setLoading,setUser } from "../redux/authSlice";
 
 import { useNavigate } from 'react-router-dom';
 import Spinnerbutton from "../spinner/Spinnerbutton";
-import './Navbar.css';
+
 
 function Login() {
  
