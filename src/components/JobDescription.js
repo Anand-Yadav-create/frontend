@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import Navbar from './Navbar'
 import useGetCompanyById from '../hooks/useGetCompanyById';
 import Avtar from './shared/Avtar';
+import './Navbar.css';
 const JobDescription = () => {
 
     
@@ -80,14 +81,14 @@ const JobDescription = () => {
     <div><Navbar/>
     <div style={{margin:"80px 80px"}}>
 
-        <div style={{display:"flex",justifyContent:"space-between",padding:"10px 10px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)"}}>
+        <div className="cl" style={{display:"flex",justifyContent:"space-between",padding:"10px 10px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)"}}>
             <div>
 
                 <Avtar url={singleCompany?.logo}/>
       <h4 style={{margin:"0px"}}>{singleJob?.title}</h4>
       <p style={{marginBottom:"0px",paddingBottom:"0px"}}>{singleJob?.description}</p>
        <h4 style={{margin:"10px 0"}}>Required Skills</h4>
-      <div style={{width:"50rem",display:'flex',gap:"10px",padding:"30px"}}>
+      <div style={{width:"50rem",display:'flex',flexWrap:"wrap",gap:"10px",padding:"30px"}}>
       
       
       {singleJob?.requirements?.map((item,index)=>(
@@ -113,7 +114,7 @@ const JobDescription = () => {
 
       <h4 style={{margin:"0px 0px"}}>Job details</h4>
 
-      <div style={{ margin:"0px 0px",width:"15rem",display:'flex',justifyContent:"space-between",padding:"30px"}}>
+      <div style={{ margin:"0px 0px",width:"15rem",display:'flex',flexWrap:'wrap',justifyContent:"space-between",padding:"30px"}}>
       
 
       <span style={{backgroundColor:"red",border:"2px solid white",borderRadius:"30px",color:"white",padding:"5px"}} >
