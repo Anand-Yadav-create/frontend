@@ -147,6 +147,9 @@
       height:auto;
 
     }
+      .cl{
+          flex-direction:column;
+      }
     .disabled{
       display:none;
     }
