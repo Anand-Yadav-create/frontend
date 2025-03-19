@@ -50,7 +50,7 @@ const Profile = () => {
         <div>
           <h4 style={{margin:"0px"}}>Skills</h4>
           {
-            <div className="cl" style={{ maxWidth: "100%", display: "flex",gap:"10px", padding: "30px", alignItems:"right" }}>{
+            <div  style={{ display: "flex",flexWrap:"wrap",gap:"10px", padding: "30px", alignItems:"right" }}>{
               user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
                 return (
 
