@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 // import store from './redux/store';
 import {  setUser } from './redux/authSlice';
-import "./Navbar.css";
+
 const UpdateProfileDialog = ({ open, setOpen }) => {
     const dialogRef = useRef(null);
 
@@ -114,7 +114,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         //     </button>
         //   </modal>
         // </div>
-        <div style={{display:"flex",flexWrap:"wrap"}} className="dialogbhai">
+        <div className="flex flex-col items-center gap-4 p-4">
             {/* <button onClick={() => dialogRef.current.showModal()} className="p-2 bg-blue-500 text-white rounded">
         Open Dialog
       </button> */}

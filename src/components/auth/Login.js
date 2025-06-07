@@ -11,6 +11,11 @@ import { setLoading,setUser } from "../redux/authSlice";
 import { useNavigate } from 'react-router-dom';
 import Spinnerbutton from "../spinner/Spinnerbutton";
 
+
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "./firebase"; // your Firebase config
+// import axios from "axios";
+
 function Login() {
  
        
@@ -31,6 +36,43 @@ function Login() {
 
   // State to store submission result
     const [submitted, setSubmitted] = useState(false);
+
+
+
+
+
+
+
+
+    const handleGoogleLogin = async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const idToken = await result.user.getIdToken();
+
+    const res = await axios.post("https://engineers-hub-1.onrender.com/google", { token: idToken }, {
+
+      headers:{
+          "Content-Type":"application/json"
+        },
+      withCredentials: true,
+    });
+
+    // now you can use res.data.user
+    // setUser(res.data.user); // or redirect to chat
+
+     if(res.data.success){
+
+        dispatch(setUser(res.data.user));
+        
+        navigate("/");
+        toast.success('🟢 Successfully Login!');
+     
+      }
+  } catch (err) {
+    console.error("Google login failed:", err);
+  }
+};
 
   
 
@@ -60,7 +102,7 @@ function Login() {
 
       dispatch(setLoading(true));
 
-      const res = await axios.post(`${USER_API_END_POINT}/login`,formData, {
+      const res = await axios.post("https://engineers-hub-1.onrender.com/login",formData, {
         headers:{
           "Content-Type":"application/json"
         },
@@ -184,7 +226,7 @@ function Login() {
           {
             submitted ?<Spinnerbutton/>
             : <button type="submit">Submit</button>
-          }
+          } <button onClick={handleGoogleLogin}>Login with Google</button>
            </div>
          
           
