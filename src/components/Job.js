@@ -4,7 +4,7 @@ import React from 'react'
 import { useState } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import Avtar from './shared/Avtar';
-import Badge from '@material-ui/core/Badge';
+import Badge from '@mui/material/Badge';
 import { useNavigate } from 'react-router-dom';
 
 

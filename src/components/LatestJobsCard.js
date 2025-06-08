@@ -1,5 +1,5 @@
 
-import Badge from '@material-ui/core/Badge';
+import Badge from '@mui/material/Badge';
 import React from 'react'
 import Avtar from './shared/Avtar';
 import { useNavigate } from 'react-router-dom';

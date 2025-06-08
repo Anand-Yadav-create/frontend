@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Table.css";
-import Badge from '@material-ui/core/Badge';
+import Badge from '@mui/material/Badge';
 import { useSelector } from 'react-redux';
 
 

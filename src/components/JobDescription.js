@@ -1,5 +1,5 @@
 import React from 'react'
-import Badge from '@material-ui/core/Badge';
+import Badge from '@mui/material/Badge';
 
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react'
