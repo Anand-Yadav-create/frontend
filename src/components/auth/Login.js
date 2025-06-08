@@ -13,7 +13,7 @@ import Spinnerbutton from "../spinner/Spinnerbutton";
 
 
 
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "./firebase"; // your Firebase config
 // import axios from "axios";
 
@@ -83,15 +83,17 @@ function Login() {
   
    const handleGoogleLogin = async () => {
   try {
+
+    const auth=getAuth();
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
-    const idToken = await result.user.getIdToken();
+    const token = await result.user.getIdToken();
 
     // console.log("hel");
 
-    console.log("ID Token:", idToken); 
+    console.log("ID Token:", token); 
 
-    const res = await axios.post(`${USER_API_END_POINT}/google`, { token: idToken }, {
+    const res = await axios.post(`${USER_API_END_POINT}/google`, { token: token }, {
 
       headers:{
           "Content-Type":"application/json"
