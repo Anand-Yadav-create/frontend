@@ -87,7 +87,7 @@ function Login() {
     const result = await signInWithPopup(auth, provider);
     const idToken = await result.user.getIdToken();
 
-    const res = await axios.post("https://engineers-hub-1.onrender.com/google", { token: idToken }, {
+    const res = await axios.post(`${USER_API_END_POINT}/google`, { token: idToken }, {
 
       headers:{
           "Content-Type":"application/json"
@@ -137,7 +137,8 @@ function Login() {
 
       dispatch(setLoading(true));
 
-      const res = await axios.post("https://engineers-hub-1.onrender.com/login",formData, {
+      // const res = await axios.post(`${USER_API_END_POINT}/login`"https://engineers-hub-1.onrender.com/login",formData, {
+        const res = await axios.post(`${USER_API_END_POINT}/login`,formData, {
         headers:{
           "Content-Type":"application/json"
         },
