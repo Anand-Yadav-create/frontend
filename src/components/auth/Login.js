@@ -87,6 +87,10 @@ function Login() {
     const result = await signInWithPopup(auth, provider);
     const idToken = await result.user.getIdToken();
 
+    // console.log("hel");
+
+    console.log("ID Token:", idToken); 
+
     const res = await axios.post(`${USER_API_END_POINT}/google`, { token: idToken }, {
 
       headers:{
