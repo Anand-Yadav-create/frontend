@@ -80,7 +80,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
 
         }catch(error){
             console.log(error);
-            toast.error(error.res.data.message);
+            toast.error(error.res?.data?.message||"Something missing");
 
         }
       
