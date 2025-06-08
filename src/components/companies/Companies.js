@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import useGetAllCompanies from '../../hooks/useGetAllCompanies'
 import { useDispatch } from 'react-redux'
 import { setsearchCompanyByText } from '../redux/companySlice'
-
+import '../Navbar.css'
 const Companies = () => {
  
   useGetAllCompanies();
@@ -23,7 +23,7 @@ const Companies = () => {
     <div>
         <Navbar/>
         <div style={{maxWidth:"80%",margin:"10px auto"}}>
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+            <div className="cl" style={{marginTop:"3px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
 
                 <input style={{width:"20rem",height:"30px",fontSize:"20px"}} placeholder="Filter by name" onChange={(e)=>setInput(e.target.value)}/>
 

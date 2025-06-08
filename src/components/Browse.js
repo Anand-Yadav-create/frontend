@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useGetAllJobs from '../hooks/useGetAllJobs';
 import { setSearchedQuery, setSearchingQuery } from './redux/authSlice';
 import { motion } from "framer-motion";
-
+import './Navbar.css'
 // const randomJobs=[1,2,3,4,5,6,7];
 
 const Browse = () => {
@@ -35,9 +35,9 @@ const Browse = () => {
         }else{
           setFilterjobs(allJobs);
         }
-        // return ()=>{
-        //     dispatch(setSearchedQuery(""));
-        // }
+        return ()=>{
+            dispatch(setSearchedQuery(""));
+        }
 
 
     
@@ -51,7 +51,7 @@ const Browse = () => {
         <div style={{margin:"0px 70px"}}>
             <h4>Search Results({filterjobs.length})</h4>
 
-            <div  style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"20px"}}>
+            <div className="grid-cont" style={{display:"grid",gap:"20px"}}>
                 {
                     filterjobs.map((item)=>{
                         return(

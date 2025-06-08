@@ -7,21 +7,22 @@ import { useState } from 'react';
 import UpdateProfileDialog from './UpdateProfileDialog';
 import { useSelector } from 'react-redux';
 import useGetAppliedJobs from '../hooks/useGetAppliedJobs';
+import './Navbar.css';
 
 
-let isResume=true;
+let isResume = true;
 
 const Profile = () => {
- 
-  useGetAppliedJobs();
-  const [open,setOpen]=useState(false);
 
-  const {user}=useSelector(store=>store.auth);
+  useGetAppliedJobs();
+  const [open, setOpen] = useState(false);
+
+  const { user } = useSelector(store => store.auth);
   return (
     <div>
       <Navbar />
 
-      <div style={{ maxWidth: "80rem", background: "white",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.2)", margin: "5px 100px", padding: "8px" }}>
+      <div style={{ maxWidth: "80%", background: "white", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)", margin: "5px 100px", padding: "8px" }}>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
@@ -33,7 +34,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <button onClick={()=>setOpen(true)}>Edit</button>
+          <button className="show" onClick={() => setOpen(true)}>Edit</button>
 
         </div>
 
@@ -47,9 +48,13 @@ const Profile = () => {
         </div>
 
         <div>
-          <h4 style={{margin:"0px"}}>Skills</h4>
-          {
-            <div style={{ maxWidth: "100%", display: "flex", gap: "80px", padding: "30px", alignItems:"right" }}>{
+          <h4 style={{ margin: "0px" }}>Skills</h4>
+          
+
+          <div style={{ maxWidth: "100%", display: "flex", gap: "80px", padding: "30px", alignItems:"right" }}>{
+
+            <div  style={{ display: "flex",flexWrap:"wrap",gap:"10px", padding: "30px" }}>{
+
               user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
                 return (
 
@@ -66,7 +71,8 @@ const Profile = () => {
             </div>
           }
 
-        </div>
+          </div>
+          </div>
 
         <div >
 
@@ -84,17 +90,17 @@ const Profile = () => {
 
       </div>
 
-      <div style={{maxWidth:"80rem",margin:"5px 95px"}}>
+      <div style={{ maxWidth: "80rem", margin: "5px 95px" }}>
 
-<h4>All Applied Jobs</h4>
+          <h4>All Applied Jobs</h4>
 
-<AppliedJobTable/>
-</div>
-  <UpdateProfileDialog open={open} setOpen={setOpen}/>
+          <AppliedJobTable />
+      </div>
+      <UpdateProfileDialog open={open} setOpen={setOpen} />
 
 
     </div>
   )
-};
+}
 
-export default Profile
+      export default Profile;

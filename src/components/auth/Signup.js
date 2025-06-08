@@ -12,6 +12,7 @@ import {  useDispatch } from "react-redux";
 import { setLoading } from "../redux/authSlice";
 
 import Spinnerbutton from "../spinner/Spinnerbutton";
+import '../Navbar.css'
 function Signup() {
   const [formData, setFormData] = useState({
     fullname: "",
@@ -101,7 +102,7 @@ function Signup() {
   return (
     <>
       <Navbar />
-      <div style={{ maxWidth: "500px", margin: "20px auto", padding: "20px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)"  }}>
+      <div style={{ maxWidth: "60%", margin: "20px auto", padding: "20px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)"  }}>
         <h2 style={{textAlign:"center"}}>Signup</h2>
         <form onSubmit={handleSubmit}>
           {/* Username Field */}
@@ -217,7 +218,7 @@ function Signup() {
             />
           </div>
 
-          <div style={{display:"flex", justifyContent:"space-between"}}>
+          <div className="cl" style={{display:"flex", justifyContent:"space-between"}}>
             <label>
               <input
                 type="radio"

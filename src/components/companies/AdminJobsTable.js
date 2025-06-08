@@ -68,7 +68,7 @@ const AdminJobsTable = () => {
                             border: "2px solid black",
                           }}
                         >
-                          <button onClick={()=>navigate(`/admin/companies/${job._id}`)}>Edit the Company</button>
+                          
 
                           <div style={{marginTop:"10px",textAlign:"center"}}>
 
