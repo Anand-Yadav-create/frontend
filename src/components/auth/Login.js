@@ -17,8 +17,8 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "./firebase"; // your Firebase config
 // import axios from "axios";
 
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "./firebase"; // your Firebase config
+// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+// import { auth } from "./firebase"; // your Firebase config
 
 
 
@@ -262,9 +262,9 @@ function Login() {
             submitted ?<Spinnerbutton/>
             : <button type="submit">Submit</button>
 
-          } <button onClick={handleGoogleLogin}>Login with Google</button>
+          } <button type="button" onClick={handleGoogleLogin}>Login with Google</button>
 
-          <button onClick={handleGoogleLogin}>Login with Google</button>
+          
 
            </div>
          
