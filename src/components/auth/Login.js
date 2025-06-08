@@ -93,11 +93,9 @@ function Login() {
 
     console.log("ID Token:", token); 
 
-    const res = await axios.post(`${USER_API_END_POINT}/google`, { token: token }, {
+    const res = await axios.post(`${USER_API_END_POINT}/google`, { token}, {
 
-      headers:{
-          "Content-Type":"application/json"
-        },
+     
       withCredentials: true,
     });
 
