@@ -51,18 +51,19 @@ const Profile = () => {
           <h4 style={{ margin: "0px" }}>Skills</h4>
           
 
-          <div style={{ maxWidth: "100%", display: "flex", gap: "80px", padding: "30px", alignItems:"right" }}>{
+          {/* <div style={{ maxWidth: "100%", display: "flex", gap: "80px", padding: "30px", alignItems:"right" }}>{
 
-            <div  style={{ display: "flex",flexWrap:"wrap",gap:"10px", padding: "30px" }}>{
+            <div  style={{ display: "flex",justifyContent: "space-evenly", alignItems: "center",flexWrap:"wrap"}}>{
 
               user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
-                return (
+                 return (
 
-
-                  <Badge key={index} badgeContent={item.replace(" ","")}
-                    color="primary">
+                  
+                  <Badge  key={index} badgeContent={item.replace(" ","")}
+                    color="secondary">
 
                   </Badge>
+                  
 
                 )
               }
@@ -71,7 +72,44 @@ const Profile = () => {
             </div>
           }
 
-          </div>
+          </div> */}
+
+
+
+          <div
+  style={{
+    maxWidth: "100%",
+    display: "flex",
+    gap: "80px",
+    padding: "30px",
+    alignItems: "center", // corrected this
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: "25px" // optional for nicer spacing
+    }}
+  >
+    {user?.profile?.skills.length !== 0 ? (
+      user?.profile?.skills.map((item, index) => (
+        <Badge
+          key={index}
+          badgeContent={item.replace(" ", "")}
+          color="secondary"
+        >
+          <div style={{ width: 30, height: 30, backgroundColor: "#eee" }}></div> {/* dummy child */}
+        </Badge>
+      ))
+    ) : (
+      <span>NA</span>
+    )}
+  </div>
+</div>
+
           </div>
 
         <div >
@@ -80,7 +118,7 @@ const Profile = () => {
           
           {
 
-            isResume?<a  target="blank" href={user?.profile?.resume}>{user?.profile?.resumeOriginalName}</a>:<span>NA</span>
+            isResume?<a  target="blank" href={user?.profile?.resume}>{user?.profile?.resumeOriginalName}</a>:<span>NA  aafldslk</span>
           }
         </div>
 

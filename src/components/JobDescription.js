@@ -12,6 +12,7 @@ import Navbar from './Navbar'
 import useGetCompanyById from '../hooks/useGetCompanyById';
 import Avtar from './shared/Avtar';
 import './Navbar.css';
+
 const JobDescription = () => {
 
 
@@ -78,7 +79,8 @@ const JobDescription = () => {
 
     return (
 
-        <div><Navbar />
+        <div>
+            <Navbar />
             <div style={{ margin: "80px 80px" }}>
 
                 <div className="cl" style={{ display: "flex", justifyContent: "space-between", padding: "10px 10px", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
@@ -88,9 +90,28 @@ const JobDescription = () => {
                         <h4 style={{ margin: "0px" }}>{singleJob?.title}</h4>
                         <p style={{ marginBottom: "0px", paddingBottom: "0px" }}>{singleJob?.description}</p>
                         <h4 style={{ margin: "10px 0" }}>Required Skills</h4>
-                        <div style={{ width: "50rem", display: 'flex', gap: "5rem", padding: "30px" }}>
+                         
 
-                            <div style={{ display: 'flex', flexWrap: "wrap", gap: "10px", padding: "30px" }}>
+                         <div style={{ display: 'flex', flexWrap: "wrap", justifyContent:"space-around",gap:"20px", padding: "20px" }}> 
+
+                        {/* <div
+                            style={{
+                                maxWidth: "100%",
+                                display: "flex",
+                                gap: "80px",
+                                padding: "30px",
+                                alignItems: "center", // corrected this
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-evenly",
+                                    alignItems: "center",
+                                    flexWrap: "wrap",
+                                    gap: "25px" // optional for nicer spacing
+                                }}
+                            > */}
 
 
 
@@ -98,68 +119,66 @@ const JobDescription = () => {
 
                                     <Badge key={index} badgeContent={item.replace(" ", "")}
                                         color="secondary">
+                                        <div style={{ width: 20, height: 20, backgroundColor: "#eee" }}></div> 
 
                                     </Badge>
 
 
                                 ))}
 
-
-                                {/* <Badge badgeContent={`${singleJob?.jobType.replace(" ","")}`}
-                                      color="secondary">
-      
-                                         </Badge>
-                                   <Badge badgeContent={`${singleJob?.salary}LPA`}
-                                       color="secondary">
-      
-                                                       </Badge> */}
                             </div>
+                       
 
 
-                            <div style={{ width: "10rem", display: 'flex', justifyContent: "space-between", padding: "30px" }}>
 
-                                <h4 style={{ margin: "0px 0px" }}>Job details</h4>
-
-                                <div style={{ margin: "0px 0px", display: 'flex', flexWrap: 'wrap', justifyContent: "space-between", padding: "30px" }}>
+                    
 
 
-                                    <Badge badgeContent={`${singleJob?.position}Position`}
-                                        color="primary">
+                    {/* <div style={{ width: "10rem", display: 'flex', justifyContent: "space-between", padding: "30px" }}> */}
 
-                                    </Badge>
-                                    <Badge badgeContent={`${singleJob?.jobType.replace(" ", "")}`}
-                                        color="secondary">
+                        <h4 style={{ margin: "0px 0px" }}>Job details</h4>
 
-                                    </Badge>
-                                    <Badge badgeContent={`${singleJob?.salary}LPA`}
-                                        color="secondary">
+                        {/* <div style={{ margin: "0px 0px", display: 'flex', flexWrap: 'wrap', gap:"70px", padding: "30px" }}> */}
+                           <div style={{ display: 'flex', flexWrap: "wrap", justifyContent:"space-around",gap:"20px", padding: "30px" }}> 
 
-                                    </Badge>
-                                </div>
-                            </div>
+                            <Badge badgeContent={`${singleJob?.position}Position`}
+                                color="primary">
 
+                            </Badge>
+                            <Badge badgeContent={`${singleJob?.jobType.replace(" ", "")}`}
+                                color="secondary">
 
-                            <div>
-                                <button style={{ backgroundColor: !isApplied ? "red" : "gray", cursor: isApplied ? "not-allowed" : "pointer" }} onClick={isApplied ? null : applyJobHandler}>{isApplied ? "Already Applied" : "Apply Now"}</button>
-                            </div>
+                            </Badge>
+                            <Badge badgeContent={`${singleJob?.salary}LPA`}
+                                color="secondary">
+
+                            </Badge>
                         </div>
+                    {/* </div> */}
+                </div>
 
-                        <h4>Job Description</h4>
-                        <div>
-                            <h4 style={{ margin: "2px 3px" }}> Role: <span style={{ fontWeight: "normal" }}> {singleJob?.title}</span></h4>
-                            <h4 style={{ margin: "2px 3px" }}> Location: <span style={{ fontWeight: "normal" }}>{singleJob?.location}</span></h4>
-                            <h4 style={{ margin: "2px 3px" }}> Description: <span style={{ fontWeight: "normal" }}>{singleJob?.description}</span></h4>
-                            <h4 style={{ margin: "2px 3px" }}> Experience: <span style={{ fontWeight: "normal" }}>{singleJob?.experienceLevel} yrs</span></h4>
-                            <h4 style={{ margin: "2px 3px" }}> Salary: <span style={{ fontWeight: "normal" }}>{singleJob?.salary} LPA</span></h4>
-                            <h4 style={{ margin: "2px 3px" }}> Total Applicants: <span style={{ fontWeight: "normal" }}>{singleJob?.applications?.length || 0}</span></h4>
-                            <h4 style={{ margin: "2px 3px" }}> Posted Date: <span style={{ fontWeight: "normal" }}>{singleJob?.createdAt?.split("T")[0] || "No date"}</span></h4>
-                        </div>
+
+                    <div>
+                        <button style={{ backgroundColor: !isApplied ? "red" : "gray", cursor: isApplied ? "not-allowed" : "pointer" }} onClick={isApplied ? null : applyJobHandler}>{isApplied ? "Already Applied" : "Apply Now"}</button>
                     </div>
                 </div>
 
+
+                <h4>Job Description</h4>
+                <div>
+                    <h4 style={{ margin: "2px 3px" }}> Role: <span style={{ fontWeight: "normal" }}> {singleJob?.title}</span></h4>
+                    <h4 style={{ margin: "2px 3px" }}> Location: <span style={{ fontWeight: "normal" }}>{singleJob?.location}</span></h4>
+                    <h4 style={{ margin: "2px 3px" }}> Description: <span style={{ fontWeight: "normal" }}>{singleJob?.description}</span></h4>
+                    <h4 style={{ margin: "2px 3px" }}> Experience: <span style={{ fontWeight: "normal" }}>{singleJob?.experienceLevel} yrs</span></h4>
+                    <h4 style={{ margin: "2px 3px" }}> Salary: <span style={{ fontWeight: "normal" }}>{singleJob?.salary} LPA</span></h4>
+                    <h4 style={{ margin: "2px 3px" }}> Total Applicants: <span style={{ fontWeight: "normal" }}>{singleJob?.applications?.length || 0}</span></h4>
+                    <h4 style={{ margin: "2px 3px" }}> Posted Date: <span style={{ fontWeight: "normal" }}>{singleJob?.createdAt?.split("T")[0] || "No date"}</span></h4>
                 </div>
-                </div>
-                )
+            </div>
+        </div>
+
+                
+    )
 }
 
-                export default JobDescription;
+export default JobDescription;
