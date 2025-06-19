@@ -58,23 +58,26 @@ const Navbar = () => {
 
     <nav className="navbar" >
       <div className="navbar-logo" style={{padding:"20px"}}>
-        <Link to="/" style={{color:"#0a9ecf9a"}}>Engineers Job <span>Portal</span></Link>
+        <Link to="/" style={{color:"red"}}>Engineers Job <span>Portal</span></Link>
       </div>
-      <div className="navbar-links">
+      <div className="navbar-links" style={{display:"flex"}}>
         {
           (user && user.role==="Recruiter")?
           (<><Link to="/admin/companies">Companies</Link>
-        <Link to="/admin/jobs">Jobs</Link></>):(<>
-         <Link to="/">Home</Link>
-        <Link to="/jobs">Jobs</Link>
-        <Link to="/browse">Browse</Link></>)
+        <Link to="/admin/jobs">Jobs</Link></>):(user&&<div className="responsive-links">
+        
+         <Link to="/"><button  >Home</button></Link>
+        <Link to="/jobs"><button >Jobs</button></Link>
+        <Link to="/browse"><button >Browse</button></Link>
+        <Link to="/external"><button >Online Jobs</button></Link></div>)
        
-}
+          }
         
       
-      {!user?(<div>
+      {!user?(<div className="responsive-links" style={{display:"flex",gap:"10px"}}>
        <Link to="/login"> <button>Login</button></Link>
-        <Link to="/signup"> <button style={{marginTop:"5px"}}>SignUp</button></Link>
+        <Link to="/signup"> <button >SignUp</button></Link>
+        <Link to="/external"><button >Online Jobs</button></Link>
       </div>):
       (<div onClick={togglePopover}>
       <Avtar url= {user?.profile?.profilePhoto} />
@@ -88,9 +91,36 @@ const Navbar = () => {
       }
       {isPopoverOpen && <Popover content={user?.fullname}/>}
       </div>
+
+
+      <style>
+{`
+  .responsive-links {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: -10px;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap:2px;
+    }
+
+    .responsive-links button {
+      margin-top: 0px;
+    }
+  }
+`}
+</style>
       
       
     </nav>
+
+
+
 
 
    

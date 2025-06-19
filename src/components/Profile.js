@@ -96,13 +96,15 @@ const Profile = () => {
   >
     {user?.profile?.skills.length !== 0 ? (
       user?.profile?.skills.map((item, index) => (
-        <Badge
-          key={index}
-          badgeContent={item.replace(" ", "")}
-          color="secondary"
-        >
-          <div style={{ width: 30, height: 30, backgroundColor: "#eee" }}></div> {/* dummy child */}
-        </Badge>
+        <span key={index} style={{
+    backgroundColor: "red",
+    padding: "8px 12px",
+    borderRadius: "20px",
+    fontSize: "14px",
+    color:"white"
+  }}>
+    {item}
+  </span>
       ))
     ) : (
       <span>NA</span>

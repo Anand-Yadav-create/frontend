@@ -30,7 +30,7 @@ const LatestJobs = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", font: "bold", marginLeft: "45px" }}> <span style={{ color: "#0a9ecf9a" }}>Latests & Top</span>Job Openings</h1>
+      <h1 style={{ textAlign: "center", font: "bold", marginLeft: "45px",color:"red" }}> <span>Latests And Top</span>Job Openings</h1>
 
       <div className='grid-cont' style={{ width: "80%", margin: "10px auto", marginBottom: "8rem", display: "grid", gap: "10px" }} >
         {allJobs?.length > 0 ? (allJobs.slice(0, 6).map((job) => (

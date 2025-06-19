@@ -26,9 +26,29 @@ const HeroSection =()=>{
     return (
         <div style={{textAlign:"center"}}>
 
-            <h2 style={{px:"4",py:"2",font:"medium"}}>No 1 Job Engineers Website</h2>
-            <h1 style={{text:"15px"}}>Search , Apply & <br/> Get Your<span style={{color:"#0a9ecf9a"}}>Dream Jobs</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In quasi soluta molestiae dolore atque voluptates.</p>
+            <h2 style={{px:"4",py:"2",font:"medium",color:"red",text:"15px"}}>ALL In one Place</h2>
+
+
+            <div style={{ width: '100%', height: '300px', overflow: 'hidden' }}>
+  <img
+    src="/banner.jpg"
+    alt="Job Portal Banner"
+    style={{ width: '80%', height: '100%', objectFit: 'cover' }}
+  />
+</div>
+            <h1 style={{text:"15px",color:"red",margin:"10px 20px"}}>You can Search , Apply and Get Your<span >Dream Jobs</span></h1>
+            <p style={{margin:"10px 30px",fontWeight:"bold"}}>Discover thousands of job opportunities aggregated from social platforms, all in one place.<br/>
+Recruiters can seamlessly post jobs after registration, while users can log in to search and apply with ease.
+
+
+
+
+
+
+
+
+
+</p>
 
             <div><input className="inputStyle" type="text" placeholder='Find your dream jobs'
             onChange={(e)=>setquery(e.target.value)}

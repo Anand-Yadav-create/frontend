@@ -23,7 +23,7 @@ const LatestJobsCard = ({job}) => {
         </div>
         <div>
       
-        <div style={{display:'flex',alignItems:"center",gap:"2px",marginTop:"4px",justifyContent:"space-between",padding:"30px"}}>
+        <div style={{display:'flex',alignItems:"center",gap:"2px",marginTop:"4px",justifyContent:"space-between",padding:"5% 20%"}}>
       
       <Badge badgeContent={`${job?.position}Position`}
       color="primary">

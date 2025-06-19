@@ -1,6 +1,3 @@
-import React from 'react'
-import Badge from '@mui/material/Badge';
-
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import axios from 'axios';
@@ -70,7 +67,9 @@ const JobDescription = () => {
 
             } catch (error) {
                 console.log(error);
-                toast.error(error.response.data.message);
+                
+                const message = error.response?.data?.message || "Server error or connection failed";
+                toast.error(message);
 
             }
         }
@@ -90,72 +89,67 @@ const JobDescription = () => {
                         <h4 style={{ margin: "0px" }}>{singleJob?.title}</h4>
                         <p style={{ marginBottom: "0px", paddingBottom: "0px" }}>{singleJob?.description}</p>
                         <h4 style={{ margin: "10px 0" }}>Required Skills</h4>
-                         
 
-                         <div style={{ display: 'flex', flexWrap: "wrap", justifyContent:"space-around",gap:"20px", padding: "20px" }}> 
 
-                        {/* <div
-                            style={{
-                                maxWidth: "100%",
-                                display: "flex",
-                                gap: "80px",
-                                padding: "30px",
-                                alignItems: "center", // corrected this
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "space-evenly",
-                                    alignItems: "center",
-                                    flexWrap: "wrap",
-                                    gap: "25px" // optional for nicer spacing
-                                }}
-                            > */}
+                        <div style={{ display: 'flex', flexWrap: "wrap", justifyContent: "flex-start", gap: "10px", padding: "20px" }}>
+
+                           
 
 
 
-                                {singleJob?.requirements?.map((item, index) => (
+                            {singleJob?.requirements?.map((item, index) => (
 
-                                    <Badge key={index} badgeContent={item.replace(" ", "")}
-                                        color="secondary">
-                                        <div style={{ width: 20, height: 20, backgroundColor: "#eee" }}></div> 
+                               
+                                <span key={index} style={{
+                                    backgroundColor: "#f0f0f0",
+                                    padding: "8px 12px",
+                                    borderRadius: "20px",
+                                    fontSize: "14px"
+                                }}>
+                                    {item}
+                                </span>
 
-                                    </Badge>
+
+                            ))}
+
+                        </div>
 
 
-                                ))}
 
-                            </div>
+
+
+
+
                        
-
-
-
-                    
-
-
-                    {/* <div style={{ width: "10rem", display: 'flex', justifyContent: "space-between", padding: "30px" }}> */}
-
                         <h4 style={{ margin: "0px 0px" }}>Job details</h4>
 
-                        {/* <div style={{ margin: "0px 0px", display: 'flex', flexWrap: 'wrap', gap:"70px", padding: "30px" }}> */}
-                           <div style={{ display: 'flex', flexWrap: "wrap", justifyContent:"space-around",gap:"20px", padding: "30px" }}> 
+                 
 
-                            <Badge badgeContent={`${singleJob?.position}Position`}
-                                color="primary">
 
-                            </Badge>
-                            <Badge badgeContent={`${singleJob?.jobType.replace(" ", "")}`}
-                                color="secondary">
-
-                            </Badge>
-                            <Badge badgeContent={`${singleJob?.salary}LPA`}
-                                color="secondary">
-
-                            </Badge>
+                        <div style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '12px',
+                            padding: '30px',
+                            
+                        }}>
+                            {[`${singleJob?.position} Position`, singleJob?.jobType.replace(/\s+/g, ''), `${singleJob?.salary} LPA`].map((item, idx) => (
+                                <div key={idx} style={{
+                                    backgroundColor: 'red',
+                                    padding: '8px 16px',
+                                    borderRadius: '20px',
+                                    fontSize: '14px',
+                                    whiteSpace: 'nowrap',
+                                    color: "white"
+                                }}>
+                                    {item}
+                                </div>
+                            ))}
                         </div>
-                    {/* </div> */}
-                </div>
+
+
+                       
+                    </div>
 
 
                     <div>
@@ -177,7 +171,7 @@ const JobDescription = () => {
             </div>
         </div>
 
-                
+
     )
 }
 

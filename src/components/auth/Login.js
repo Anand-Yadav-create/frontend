@@ -10,6 +10,7 @@ import { setLoading,setUser } from "../redux/authSlice";
 
 import { useNavigate } from 'react-router-dom';
 import Spinnerbutton from "../spinner/Spinnerbutton";
+import '../Navbar.css';
 
 
 
@@ -175,7 +176,7 @@ function Login() {
   return (
     <>
       <Navbar />
-      <div style={{ width: "50%", margin: "auto", padding: "20px 20px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
+      <div className="temp" style={{ width: "40%", margin: "auto", padding: "20px 20px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
         <h2 style={{ textAlign:"center"}}>Login</h2>
         <form onSubmit={handleSubmit}>
        
@@ -264,7 +265,11 @@ function Login() {
           <div style={{marginTop:"10px",textAlign:"center"}}>
           
           {
-            submitted ?<Spinnerbutton/>
+            submitted ?<div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    
+  }}><Spinnerbutton/></div>
             : <button type="submit">Submit</button>
 
           } <button type="button" onClick={handleGoogleLogin}>Login with Google</button>

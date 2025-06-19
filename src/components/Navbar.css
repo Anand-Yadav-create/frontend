@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background-color:rgba(235, 19, 19, 0);
-    padding: 10px 20px;
+    padding: 8px 20px;
     /* color: black; */
   }
   
@@ -62,12 +62,12 @@
   
   @media (max-width: 900px) {
     .navbar-links {
-      display: none;
+      display: flex;
       flex-direction: column;
       /* background-color: #007bff; */
      /* position: absolute;*/
-      top: 50px;
-      right: 20px;
+      /* top: 50px;
+      right: 20px; */
       width: 150px;
       text-align: center;
       border-radius: 5px;
@@ -92,9 +92,12 @@
         cursor: pointer;
 
         margin-left:3px;
+        transition: all 0.3s ease;
 
   }
-
+button:hover {
+    transform: scale(1.1); /* Increase size by 10% on hover */
+}
   
 
   .badge {
@@ -155,6 +158,9 @@
       width:auto;
       height:auto;
 
+    }
+    .temp{
+      width:80%;
     }
       .cl{
           flex-direction:column;

@@ -19,6 +19,7 @@ import AdminJobs from "./components/companies/AdminJobs";
 import PostJob from "./components/companies/PostJob";
 import Applicants from "./components/companies/Applicants";
 import ProtectedRoute from "./components/companies/ProtectedRoute";
+import ExternalJobs from "./components/ExternalJobs";
 
 
 
@@ -46,6 +47,7 @@ function App() {
     <Route path="/browse" element={<Browse/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/description/:id" element={<JobDescription/>}/>
+    <Route path="/external" element={<ExternalJobs/>} />
 
 
 

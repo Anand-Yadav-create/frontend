@@ -3,7 +3,7 @@ import Avatar from "react-avatar";
 
 const Avtar = ({url}) => {
   return (
-    <div>
+    <div style={{marginTop:"5px"}}>
       {/* <h1>User Avatars</h1> */}
       {/* <Avatar name="John Prof" size="40" round={true} /> */}
       {/* <Avatar name="Jane Doe" size="100" color="#007bff" /> */}
