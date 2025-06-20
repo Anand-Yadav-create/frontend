@@ -1,0 +1,31 @@
+.applied-jobs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.applied-job-card {
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.applied-job-card:hover {
+  transform: scale(1.02);
+}
+
+.applied-job-card p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.badge-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-left:-100px;
+}

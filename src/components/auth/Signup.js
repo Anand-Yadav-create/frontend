@@ -102,7 +102,7 @@ function Signup() {
   return (
     <>
       <Navbar />
-      <div  className="temp" style={{ maxWidth: "40%", margin: "20px auto", padding: "20px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)"  }}>
+      <div  className="temp" >
         <h2 style={{textAlign:"center"}}>Signup</h2>
         <form onSubmit={handleSubmit}>
           {/* Username Field */}

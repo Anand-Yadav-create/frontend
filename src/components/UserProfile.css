@@ -1,0 +1,93 @@
+.user-profile-container {
+  max-width: 80%;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.user-profile-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile-info h4,
+.user-profile-info p {
+  margin: 0;
+  padding: 0;
+}
+
+.edit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color:  #0a9ecf9a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color:  #0a9ecf9a;
+}
+
+.user-profile-contact {
+  margin: 10px 0;
+}
+
+.skills-wrapper {
+  max-width: 100%;
+  padding: 20px 0;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill-badge {
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.user-profile-resume {
+  margin-top: 10px;
+}
+
+.user-profile-resume label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .user-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edit-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .skills-list {
+    justify-content: flex-start;
+  }
+}

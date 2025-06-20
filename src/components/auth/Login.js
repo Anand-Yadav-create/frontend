@@ -176,7 +176,7 @@ function Login() {
   return (
     <>
       <Navbar />
-      <div className="temp" style={{ width: "40%", margin: "auto", padding: "20px 20px",boxShadow:"0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
+      <div className="temp">
         <h2 style={{ textAlign:"center"}}>Login</h2>
         <form onSubmit={handleSubmit}>
        

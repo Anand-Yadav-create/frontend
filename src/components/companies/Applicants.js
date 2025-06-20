@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import Navbar from '../Navbar'
-import ApplicationTable from './ApplicationTable'
+
 import { APPLICATION_API_END_POINT } from '../utils/constant';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAllapplicants } from '../redux/applicationSlice';
+import ApplicantCardList from './ApplicantCardList';
 
 const Applicants = () => {
 
@@ -41,7 +42,7 @@ fetchAllApplicants();
         <Navbar/>
         <div style={{width:"80%",margin:"10px auto"}}>
             <h3>Applicants ({applicants?.applications?.length})</h3>
-            <ApplicationTable/>
+            <ApplicantCardList applicants={applicants} />
         </div>
       
     </div>

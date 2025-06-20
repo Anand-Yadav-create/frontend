@@ -17,6 +17,9 @@ const CompanySetup = () => {
 
    useGetCompanyById(params.id);
 
+
+    
+
     const  [input,setInput]=useState({
         name:"",
         description:"",
@@ -71,7 +74,7 @@ const CompanySetup = () => {
          });
          if(res.data.success){
             toast.success(res.data.message);
-            navigate("/admin/companies");
+            navigate("/admin/companies",{state:{success:res.data.message},replace:true,});
          }
          
        } catch (error) {
@@ -88,11 +91,12 @@ const CompanySetup = () => {
     <div>
        <Navbar/>
        <div style={{maxWidth:"80%",margin:"10px auto"}}>
-         <form onSubmit={submitHandler}>
-            <div style={{display:"flex",alignItems:"center",gap:"20rem",padding:"8px"}}> 
-                <button onClick={()=>navigate("/admin/companies")}>
+         <button onClick={()=>navigate("/admin/companies")}>
                     back
                 </button>
+         <form onSubmit={submitHandler}>
+            <div style={{display:"flex",flexDirection:"right",alignItems:"right",gap:"20rem",padding:"8px"}}> 
+                
                 <h3>Company Setup</h3>
             </div>
            <div className="bhai" style={{display:"grid",gap:"10px"}}> 

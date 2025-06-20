@@ -1,0 +1,65 @@
+.company-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+}
+
+.company-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.company-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.edit-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.popover-content {
+  background: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popover-action {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.popover-action:hover {
+  text-decoration: underline;
+}

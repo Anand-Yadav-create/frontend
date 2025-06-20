@@ -8,6 +8,7 @@ import UpdateProfileDialog from './UpdateProfileDialog';
 import { useSelector } from 'react-redux';
 import useGetAppliedJobs from '../hooks/useGetAppliedJobs';
 import './Navbar.css';
+import './UserProfile.css';
 
 
 let isResume = true;
@@ -22,120 +23,56 @@ const Profile = () => {
     <div>
       <Navbar />
 
-      <div style={{ maxWidth: "80%", background: "white", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)", margin: "5px 100px", padding: "8px" }}>
 
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            <Avtar />
-            <div>
+      <div className="user-profile-container">
+  <div className="user-profile-header">
+    <div className="user-profile-info">
+      <Avtar />
+      <div>
+        <h4>{user?.fullname}</h4>
+        <p>{user?.profile?.bio}</p>
+      </div>
+    </div>
+    <button className="edit-button" onClick={() => setOpen(true)}>Edit</button>
+  </div>
 
-              <h4 style={{ margin: "0px 10px", padding: "0px 0px" }}>{user?.fullname}</h4>
-              <p style={{ margin: "0px 10px", padding: "0px 0px" }}>{user?.profile?.bio}</p>
-            </div>
-          </div>
+  <div className="user-profile-contact">
+    <div><span>{user?.email}</span></div>
+    <div><span>{user?.phoneNumber}</span></div>
+  </div>
 
-          <button className="show" onClick={() => setOpen(true)}>Edit</button>
+  <div>
+    <h4>Skills</h4>
+    <div className="skills-wrapper">
+      <div className="skills-list">
+        {user?.profile?.skills.length !== 0 ? (
+          user?.profile?.skills.map((item, index) => (
+            <span key={index} className="skill-badge">{item}</span>
+          ))
+        ) : (
+          <span>NA</span>
+        )}
+      </div>
+    </div>
+  </div>
 
-        </div>
-
-        <div style={{ margin: "5px 0px" }}>
-          <div>
-            <span>{user?.email}</span>
-          </div>
-          <div>
-            <span>{user?.phoneNumber}</span>
-          </div>
-        </div>
-
-        <div>
-          <h4 style={{ margin: "0px" }}>Skills</h4>
-          
-
-          {/* <div style={{ maxWidth: "100%", display: "flex", gap: "80px", padding: "30px", alignItems:"right" }}>{
-
-            <div  style={{ display: "flex",justifyContent: "space-evenly", alignItems: "center",flexWrap:"wrap"}}>{
-
-              user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => {
-                 return (
-
-                  
-                  <Badge  key={index} badgeContent={item.replace(" ","")}
-                    color="secondary">
-
-                  </Badge>
-                  
-
-                )
-              }
-              ) : <span>NA</span>
-            }
-            </div>
-          }
-
-          </div> */}
-
-
-
-          <div
-  style={{
-    maxWidth: "100%",
-    display: "flex",
-    gap: "80px",
-    padding: "30px",
-    alignItems: "center", // corrected this
-  }}
->
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-evenly",
-      alignItems: "center",
-      flexWrap: "wrap",
-      gap: "25px" // optional for nicer spacing
-    }}
-  >
-    {user?.profile?.skills.length !== 0 ? (
-      user?.profile?.skills.map((item, index) => (
-        <span key={index} style={{
-    backgroundColor: "red",
-    padding: "8px 12px",
-    borderRadius: "20px",
-    fontSize: "14px",
-    color:"white"
-  }}>
-    {item}
-  </span>
-      ))
+  <div className="user-profile-resume">
+    <label>Resume</label>
+    {isResume ? (
+      <a target="_blank" href={user?.profile?.resume}>{user?.profile?.resumeOriginalName}</a>
     ) : (
       <span>NA</span>
     )}
   </div>
 </div>
 
-          </div>
-
-        <div >
-
-          <label style={{fontWeight:"bold",marginRight:"10px"}}>Resume</label>
-          
-          {
-
-            isResume?<a  target="blank" href={user?.profile?.resume}>{user?.profile?.resumeOriginalName}</a>:<span>NA  aafldslk</span>
-          }
-        </div>
-
-       
-
-
-
-      </div>
-
-      <div style={{ maxWidth: "80rem", margin: "5px 95px" }}>
-
+     
+     <div style={{width:"80%",margin:"10px auto"}}>
           <h4>All Applied Jobs</h4>
 
           <AppliedJobTable />
-      </div>
+          </div>
+    
       <UpdateProfileDialog open={open} setOpen={setOpen} />
 
 

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import CompaniesTable from './CompaniesTable'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate  } from 'react-router-dom'
 import useGetAllCompanies from '../../hooks/useGetAllCompanies'
 import { useDispatch } from 'react-redux'
 import { setsearchCompanyByText } from '../redux/companySlice'
+
 import '../Navbar.css'
 const Companies = () => {
  
@@ -15,10 +16,15 @@ const Companies = () => {
   const navigate=useNavigate();
   const dispatch=useDispatch();
 
+
+  
+
   useEffect(()=>{
     dispatch(setsearchCompanyByText(input));
 
   },[input])
+
+
   return (
     <div>
         <Navbar/>
