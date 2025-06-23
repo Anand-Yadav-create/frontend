@@ -178,23 +178,6 @@ function Signup() {
           </div>
 
 
-          {/* Submit Button */}
-          {/* <button
-          type="submit"
-          style={{
-            width: "100%",
-            padding: "10px",
-            backgroundColor: "blue",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          Signup
-        </button> */}
-
-        {/* Number Field */}
         <div style={{ marginBottom: "15px" }}>
             <label
               htmlFor="phoneNumber"

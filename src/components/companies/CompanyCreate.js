@@ -46,14 +46,57 @@ const CompanyCreate = () => {
         <h4>Company name</h4>
         <input type="text"
            placeholder='Microsoft etc'
-           style={{margin:"5px auto",width:"80%",height:"30px" ,fontSize:"20px"}}
+           style={{margin:"5px auto",width:"50%",height:"30px" ,fontSize:"20px"}}
            onChange={(e)=>setcompanyName(e.target.value)}
            />
 
-           <div style={{display:"flex",marginTop:"10px",gap:"10px"}}>
+           {/* <div style={{display:"flex",marginTop:"10px",gap:"10px"}}>
             <button onClick={()=>navigate("/admin/companies")}>Cancel</button>
             <button onClick={registerNewCompany}>Continue</button>
-           </div>
+           </div> */}
+
+           <div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",         // Allows wrapping on smaller screens
+    marginTop: "10px",
+    gap: "10px",
+    justifyContent: "flex-start",
+    maxWidth:"50%"
+  }}
+>
+  <button
+    onClick={() => navigate("/admin/companies")}
+    style={{
+      flex: "1 1 120px",      // Grows/shrinks with minimum 120px
+      padding: "10px 20px",
+      fontSize: "14px",
+      border: "none",
+      borderRadius: "4px",
+      backgroundColor: "#ccc",
+      cursor: "pointer"
+    }}
+  >
+    Cancel
+  </button>
+
+  <button
+    onClick={registerNewCompany}
+    style={{
+      flex: "1 1 120px",
+      padding: "10px 20px",
+      fontSize: "14px",
+      border: "none",
+      borderRadius: "4px",
+      backgroundColor: "#007bff",
+      color: "#fff",
+      cursor: "pointer"
+    }}
+  >
+    Continue
+  </button>
+</div>
+
        </div>
       
     </div>
