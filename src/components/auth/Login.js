@@ -92,7 +92,7 @@ function Login() {
 
     // console.log("hel");
 
-    // console.log("ID Token:", token); 
+     console.log("ID Token:", token); 
 
     const res = await axios.post(`${USER_API_END_POINT}/google`, { token}, {
 
